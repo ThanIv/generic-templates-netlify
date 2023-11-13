@@ -1,0 +1,26 @@
+name: GenericTemplateCI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    name: Lint & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install Packages
+        run: npm ci
+      - name: Check Prettier
+        run: npx prettier --check .
+      - name: Check Lint
+        run: npm run lint
+      - name: Test
+        run: npm run test
+      - name: Build
+        run: npm run build
+      - name: Integration Test
+        run: npm run integration:concurrently:headless
