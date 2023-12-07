@@ -12,6 +12,7 @@ import { SimpleCooTemplates } from "./SimpleCoo";
 import { CertificateOfNonManipulationTemplates } from "./CertificateOfNonManipulation";
 import { BrochureTemplates } from "./Brochure";
 import { BillOfLadingV1BimcoStandardTemplates } from "./BillOfLadingBimcoStandard";
+import {CertificateTemplates} from "./Certificate"
 
 export const registry: TemplateRegistry<any> = {
   BILL_OF_LADING: BillOfLadingTemplates,
@@ -27,4 +28,5 @@ export const registry: TemplateRegistry<any> = {
   SIMPLE_COO: SimpleCooTemplates,
   CERTIFICATE_OF_NON_MANIPULATION: CertificateOfNonManipulationTemplates,
   W3C_BROCHURE: BrochureTemplates,
+  CERTIFICATE: CertificateTemplates,
 };
