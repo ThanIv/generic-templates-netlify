@@ -28,7 +28,7 @@ export const CertificateSampleV3: CertificateSchemaV3 = {
         },
     },
     credentialSubject: {
-        issuer: "សាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ",
+        institute: "សាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ",
         documentName: "វិញ្ញាបនបត្របញ្ចប់ការសិក្សា",
         issueDateAndTime: "ថ្ងៃទី១២ ខែតុលា ឆ្នាំ២០២១",
         certificateId: "១១/២២០២១ សភភព",

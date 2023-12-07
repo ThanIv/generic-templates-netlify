@@ -8,7 +8,7 @@ export type CertificateSchemaV3 = v3.OpenAttestationDocument & {
 export type CertificateSchema = CertificateSchemaV2 | CertificateSchemaV3;
 
 export interface CertificateDocument {
-    issuer: string;
+    institute: string;
     documentName: string;
     issueDateAndTime: string;
     certificateId: string;

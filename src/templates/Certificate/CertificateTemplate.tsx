@@ -10,7 +10,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
     const documentData = getDocumentData(document);
 
     const {
-        issuer,
+        institute,
         documentName,
         issueDateAndTime,
         certificateId,
@@ -24,7 +24,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
             <div className="flex flex-wrap">
                 <div className="text-center">
                     <p>School Logo</p>
-                    <p>{issuer}</p>
+                    <p>{institute}</p>
                     <p>លេខ: {certificateId}</p>
                 </div>
                 <div className="w-full md:w-5/12 mb-4 md:mb-0 md:ml-auto md:order-2 text-center">
@@ -39,7 +39,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
         return(
             <div className="text-center">
                 <h1>{documentName}</h1>
-                <p>សាកលវិទ្យាធិការ{issuer}បញ្ជាក់ថា​ ៖</p>
+                <p>សាកលវិទ្យាធិការ{institute}បញ្ជាក់ថា​ ៖</p>
             </div>);
     }
 
