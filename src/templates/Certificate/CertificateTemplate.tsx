@@ -4,7 +4,7 @@ import { Wrapper } from "../../core/Wrapper";
 import { CertificateSchema } from "./types";
 import { getDocumentData } from "./../../utils";
 import { DocumentQrCode } from "../../core/DocumentQrCode";
-//import { signatoryAuthentication } from "../../core/Signatures";
+import { schoolLogo,stampAuthentication } from "../../core/Signatures";
 
 export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSchema>> = ({ document }) => {
     const documentData = getDocumentData(document);
@@ -16,7 +16,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
         certificateId,
         recipientDetails,
         certificateDetails,
-        signatoryAuthentication,
+        recipientPhoto
       } = documentData;
     
     const qrCodeUrl = documentData?.links?.self.href;
@@ -25,7 +25,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
         return(
             <div className="flex flex-wrap">
                 <div className="text-center">
-                    <p>School Logo</p>
+                <img data-testid="signature-first" className="w-1/2 mx-auto" src={schoolLogo} />
                     <p>{institute}</p>
                     <p>លេខ: {certificateId}</p>
                 </div>
@@ -49,7 +49,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
         return(
             <div className="flex">
                 <div>
-                    <p>photo</p>
+                <img data-testid="signature" src={recipientPhoto} />
                 </div>
                 <div className="mx-auto">
                     <table>
@@ -110,9 +110,10 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
                     <p>{issueDateAndTime}</p>
                     <p>ជ.សាកលវិទ្យាធិការ</p>
                     <p>សាកលវិទ្យាធិការរង</p>
-                    {signatoryAuthentication && (
-                        <img data-testid="signature-first" className="w-1/2 mx-auto" src={signatoryAuthentication?.signature} />
-                    )}
+                    <div>
+                        <img data-testid="signature-first" className="w-1/2 mx-auto" src={stampAuthentication} />
+                        <p>ចន ឌូ</p>
+                    </div>
                 </div>
             </div>
         );

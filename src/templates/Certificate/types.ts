@@ -14,7 +14,7 @@ export interface CertificateDocument {
     certificateId: string;
     recipientDetails: RecipientDetails;
     certificateDetails: CertificateDetails;
-    signatoryAuthentication?: SignatoryAuthentication;
+    recipientPhoto?: string;
     links?: { self: { href: string } };
   }
 
@@ -33,10 +33,5 @@ export interface CertificateDocument {
     level: string;
     major: string;
     dateOfCompletion: string;
-  }
-
-  interface SignatoryAuthentication {
-    signature?: string;
-    name?: string;
   }
 
