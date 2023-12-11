@@ -15,6 +15,7 @@ export interface CertificateDocument {
     recipientDetails: RecipientDetails;
     certificateDetails: CertificateDetails;
     signatoryAuthentication?: SignatoryAuthentication;
+    links?: { self: { href: string } };
   }
 
   interface RecipientDetails{

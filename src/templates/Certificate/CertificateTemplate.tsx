@@ -3,7 +3,7 @@ import React, { FunctionComponent } from "react";
 import { Wrapper } from "../../core/Wrapper";
 import { CertificateSchema } from "./types";
 import { getDocumentData } from "./../../utils";
-
+import { DocumentQrCode } from "../../core/DocumentQrCode";
 //import { signatoryAuthentication } from "../../core/Signatures";
 
 export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSchema>> = ({ document }) => {
@@ -18,6 +18,8 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
         certificateDetails,
         signatoryAuthentication,
       } = documentData;
+    
+    const qrCodeUrl = documentData?.links?.self.href;
 
     const SchoolSection: FunctionComponent = () => {
         return(
@@ -127,6 +129,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
                     <SignatureSection />
                 </div>
             </div>
+            {qrCodeUrl && <DocumentQrCode url={qrCodeUrl} />}
         </Wrapper>
     );
 }
