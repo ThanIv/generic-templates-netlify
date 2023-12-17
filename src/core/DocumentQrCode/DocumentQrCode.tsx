@@ -19,6 +19,7 @@ export const DocumentQrCode: FunctionComponent<DocumentQrCode> = ({ url }) => {
       <div className="flex justify-between text-center items-center">
         <div>
           <QRCode value={url} level="M" size={100} />
+          <p>test</p>
           <QRCode value={url} level="M" size={100} className="mx-auto"/>
           <p>ស្កេន​ QRcode</p>
           <p>ដើម្បីផ្ទៀងផ្ទាត់ឯកសារ</p>
