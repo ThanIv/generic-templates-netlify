@@ -25,7 +25,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
         return(
             <div className="flex justify-between align-middle text-center">
                 <div>
-                <img data-testid="school-logo" className="w-1/3 h-1/3 mx-auto" src={schoolLogo} />
+                <img data-testid="school-logo" className="w-20 h-24 mx-auto" src={schoolLogo} />
                     <p>{institute}</p>
                     <p>លេខ: {certificateId}</p>
                 </div>

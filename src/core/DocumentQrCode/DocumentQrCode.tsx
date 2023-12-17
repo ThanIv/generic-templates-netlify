@@ -38,11 +38,10 @@ export const DocumentQrCode: FunctionComponent<DocumentQrCode> = ({ url }) => {
   };
 
   return (
-    // <Print>
-    //   <QRCode value={url} level="M" size={400} imageSettings={imageSettings} />
-    //   {/* <div style={{ fontSize: 32, marginLeft: 64 }}>Scan the QR code with a QR code scanner device.</div> */}
-    //   {/* <div className="generated-text">Automatically Generated</div> */}
-    // </Print>
-    <QRCode value={url} level="M" size={50} />
+    <Print>
+      <QRCode value={url} level="M" size={400} imageSettings={imageSettings} />
+      <div style={{ fontSize: 32, marginLeft: 64 }}>Scan the QR code with a QR code scanner device.</div>
+      <div className="generated-text">Automatically Generated</div>
+    </Print>
   );
 };
