@@ -25,19 +25,6 @@ import qrcodeImg from "/static/images/logo-qrcode.png";
 //   }
 // `;
 
-const Print = styled.div`
-  @media print {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #000000;
-    padding: 32px;
-    }
-  }
-`;
-
-
 interface DocumentQrCode {
   url: string;
 }
@@ -51,10 +38,11 @@ export const DocumentQrCode: FunctionComponent<DocumentQrCode> = ({ url }) => {
   };
 
   return (
-    <Print>
-      <QRCode value={url} level="M" size={100} imageSettings={imageSettings} />
+      <div>
+      {/* <QRCode value={url} level="M" size={100} imageSettings={imageSettings} /> */}
+      <QRCode value={url} level="M" size={100}/>
       {/* <div style={{ fontSize: 32, marginLeft: 64 }}>Scan the QR code with a QR code scanner device.</div>
       <div className="generated-text">Automatically Generated</div> */}
-    </Print>
+      </div>
   );
 };
