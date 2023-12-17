@@ -32,16 +32,16 @@ interface DocumentQrCode {
 export const DocumentQrCode: FunctionComponent<DocumentQrCode> = ({ url }) => {
   const imageSettings: ImageSettings = {
     src: qrcodeImg,
-    height: 90,
-    width: 100,
+    height: 40,
+    width: 40,
     excavate: true,
   };
 
   return (
     <Print>
       <QRCode value={url} level="M" size={400} imageSettings={imageSettings} />
-      <div style={{ fontSize: 32, marginLeft: 64 }}>Scan the QR code with a QR code scanner device.</div>
-      <div className="generated-text">Automatically Generated</div>
+      {/* <div style={{ fontSize: 32, marginLeft: 64 }}>Scan the QR code with a QR code scanner device.</div> */}
+      {/* <div className="generated-text">Automatically Generated</div> */}
     </Print>
   );
 };

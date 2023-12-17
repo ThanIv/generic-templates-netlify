@@ -23,13 +23,13 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
 
     const SchoolSection: FunctionComponent = () => {
         return(
-            <div className="flex flex-wrap">
-                <div className="text-center">
-                <img data-testid="signature-first" className="w-1/2 mx-auto" src={schoolLogo} />
+            <div className="flex justify-between align-middle text-center">
+                <div>
+                <img data-testid="school-logo" className="w-1/3 h-1/3 mx-auto" src={schoolLogo} />
                     <p>{institute}</p>
                     <p>លេខ: {certificateId}</p>
                 </div>
-                <div className="w-full md:w-5/12 mb-4 md:mb-0 md:ml-auto md:order-2 text-center">
+                <div>
                     <p>ព្រះរាជាណាចក្រកម្ពុជា</p>
                     <p>ជាតិ សាសនា ព្រះមហាក្សត្យ</p>
                 </div> 
@@ -48,8 +48,8 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
     const RecipientSection: FunctionComponent = () =>{
         return(
             <div className="flex">
-                <div>
-                <img data-testid="signature" src={recipientPhoto} />
+                <div className="w-36 h-40 ">
+                <img data-testid="studemt-photo" src={recipientPhoto} />
                 </div>
                 <div className="mx-auto">
                     <table>
@@ -121,7 +121,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
 
     return (
         <Wrapper>
-            <div className="mx-auto border border-black">
+            <div className=" border border-black p-5">
                 <div>
                     <SchoolSection />           
                     <ConfirmSeciton />
@@ -129,8 +129,11 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
                     <NoteSection />
                     <SignatureSection />
                 </div>
+                <div>
+                    {qrCodeUrl && <DocumentQrCode url={qrCodeUrl} />}
+                </div>
             </div>
-            {qrCodeUrl && <DocumentQrCode url={qrCodeUrl} />}
+            
         </Wrapper>
     );
 }
