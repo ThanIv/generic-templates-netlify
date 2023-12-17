@@ -23,9 +23,9 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
 
     const SchoolSection: FunctionComponent = () => {
         return(
-            <div className="flex justify-between align-middle text-center">
+            <div className="flex justify-between text-center">
                 <div>
-                <img data-testid="school-logo" className="w-20 h-24 mx-auto" src={schoolLogo} />
+                    <img data-testid="school-logo" className="w-20 h-24 mx-auto" src={schoolLogo} />
                     <p>{institute}</p>
                     <p>លេខ: {certificateId}</p>
                 </div>
@@ -49,7 +49,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
         return(
             <div className="flex">
                 <div className="w-36 h-40 ">
-                <img data-testid="studemt-photo" src={recipientPhoto} />
+                    <img data-testid="studemt-photo" src={recipientPhoto} />
                 </div>
                 <div className="mx-auto">
                     <table>
@@ -105,16 +105,20 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
 
     const SignatureSection: FunctionComponent = () => {
         return(
-            <div className="flex flex-wrap w-full md:w-5/12 mb-4 md:mb-0 md:ml-auto md:order-2 text-center">
-                <div >
-                    <p>{issueDateAndTime}</p>
-                    <p>ជ.សាកលវិទ្យាធិការ</p>
-                    <p>សាកលវិទ្យាធិការរង</p>
+            <div className="flex justify-between text-center">
+                <div></div>
+                <div>
                     <div>
-                        <img data-testid="signature-first" className="w-1/2 mx-auto" src={stampAuthentication} />
-                        <p>ចន ឌូ</p>
+                        <p>{issueDateAndTime}</p>
+                        <p>ជ.សាកលវិទ្យាធិការ</p>
+                        <p>សាកលវិទ្យាធិការរង</p>
+                    </div>                     
+                    <div>
+                        <img data-testid="school-stamp" className="w-20 h-24 mx-auto" src={stampAuthentication} />
+                        <p className="text-right">ចន ឌូ</p>                   
                     </div>
                 </div>
+                
             </div>
         );
     }
@@ -122,16 +126,15 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
     return (
         <Wrapper>
             <div className=" border border-black p-5">
-                <div>
-                    <SchoolSection />           
-                    <ConfirmSeciton />
-                    <RecipientSection />
-                    <NoteSection />
-                    <SignatureSection />
-                </div>
+                <SchoolSection />           
+                <ConfirmSeciton />
+                <RecipientSection />
+                <NoteSection />
+                <SignatureSection />
                 <div>
                     {qrCodeUrl && <DocumentQrCode url={qrCodeUrl} />}
                 </div>
+                
             </div>
             
         </Wrapper>
