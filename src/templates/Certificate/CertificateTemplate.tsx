@@ -23,7 +23,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
 
     const SchoolSection: FunctionComponent = () => {
         return(
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between text-center items-center">
                 <div>
                     <img data-testid="school-logo" className="w-20 h-24 mx-auto" src={schoolLogo} />
                     <p>{institute}</p>
