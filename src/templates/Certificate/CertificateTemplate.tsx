@@ -23,7 +23,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
 
     const SchoolSection: FunctionComponent = () => {
         return(
-            <div className="flex justify-between text-center">
+            <div className="flex justify-between items-center">
                 <div>
                     <img data-testid="school-logo" className="w-20 h-24 mx-auto" src={schoolLogo} />
                     <p>{institute}</p>
@@ -47,8 +47,8 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
 
     const RecipientSection: FunctionComponent = () =>{
         return(
-            <div className="flex">
-                <div className="w-36 h-40 ">
+            <div className="flex items-center">
+                <div className="w-36 h-40">
                     <img data-testid="studemt-photo" src={recipientPhoto} />
                 </div>
                 <div className="mx-auto">
@@ -92,6 +92,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
                         </tr>                                
                     </table>
                 </div>
+                <div></div>
             </div>);
     }
 
@@ -112,9 +113,9 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<CertificateSch
                         <p>{issueDateAndTime}</p>
                         <p>ជ.សាកលវិទ្យាធិការ</p>
                         <p>សាកលវិទ្យាធិការរង</p>
+                        <img data-testid="school-stamp" className="w-24 h-24 mx-auto" src={stampAuthentication} />
                     </div>                     
-                    <div>
-                        <img data-testid="school-stamp" className="w-20 h-24 mx-auto" src={stampAuthentication} />
+                    <div>                        
                         <p className="text-right">ចន ឌូ</p>                   
                     </div>
                 </div>

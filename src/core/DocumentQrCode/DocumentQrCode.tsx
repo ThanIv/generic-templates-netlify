@@ -3,28 +3,6 @@ import QRCode, { ImageSettings } from "qrcode.react";
 import React, { FunctionComponent } from "react";
 import qrcodeImg from "/static/images/logo-qrcode.png";
 
-// const Print = styled.div`
-//   display: none;
-
-//   @media print {
-//     page-break-before: always;
-//     position: relative;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     border: 1px solid #000000;
-//     padding: 32px;
-
-//     .generated-text {
-//       position: absolute;
-//       right: 10px;
-//       bottom: 10px;
-//       font-size: 0.8em;
-//       color: grey;
-//     }
-//   }
-// `;
-
 interface DocumentQrCode {
   url: string;
 }
@@ -38,11 +16,12 @@ export const DocumentQrCode: FunctionComponent<DocumentQrCode> = ({ url }) => {
   };
 
   return (
-      <div>
-      {/* <QRCode value={url} level="M" size={100} imageSettings={imageSettings} /> */}
-      <QRCode value={url} level="M" size={100}/>
-      {/* <div style={{ fontSize: 32, marginLeft: 64 }}>Scan the QR code with a QR code scanner device.</div>
-      <div className="generated-text">Automatically Generated</div> */}
+      <div className="flex justify-between text-center">
+        <div>
+          <QRCode value={url} level="M" size={100}/>
+          <p>ស្កេន​ QRcode ដើម្បីផ្ទៀងផ្ទាត់ឯកសារ</p>
+        </div>
+        <div></div>
       </div>
   );
 };
